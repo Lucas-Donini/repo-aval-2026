@@ -1,8 +1,11 @@
 import assert from 'node:assert/strict';
+
 import { describe, test } from 'node:test';
+
 import { calcularMedia, obterSituacao } from '../src/media.js';
 
 describe('calcularMedia', () => {
+
   test('retorna a própria nota quando há apenas uma', () => {
     assert.equal(calcularMedia([8]), 8);
   });
@@ -18,9 +21,28 @@ describe('calcularMedia', () => {
   test('lança erro quando nenhuma nota é informada', () => {
     assert.throws(() => calcularMedia([]), /Informe ao menos uma nota/);
   });
+
+  test('lança erro quando a nota é negativa', () => {
+    assert.throws(() => calcularMedia([-1]));
+  });
+
+  test('lança erro quando a nota é maior que 10', () => {
+    assert.throws(() => calcularMedia([11]));
+  });
+
+  test('lança erro quando a nota não é um número', () => {
+    assert.throws(() => calcularMedia([NaN]));
+  });
+
+  test('aceita as notas 0 e 10', () => {
+    assert.equal(calcularMedia([0]), 0);
+    assert.equal(calcularMedia([10]), 10);
+  });
+
 });
 
 describe('obterSituacao', () => {
+
   test('retorna "Aprovado" para média acima da média de aprovação', () => {
     assert.equal(obterSituacao(8.5), 'Aprovado');
   });
@@ -36,4 +58,5 @@ describe('obterSituacao', () => {
   test('retorna "Reprovado" para média abaixo de 5', () => {
     assert.equal(obterSituacao(4.9), 'Reprovado');
   });
+
 });
