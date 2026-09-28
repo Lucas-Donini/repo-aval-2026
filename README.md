@@ -21,7 +21,7 @@ Conventional Commits, merges, resolução de conflitos, versionamento e Pull Req
 |---|---|
 | Lucas Donini | Lucas-Donini |
 | João Lessa | Lessajp2007 |
-
+| Victor Arndt | VictorArndt |
 
 ## Sumário
 
