@@ -17,10 +17,11 @@ Conventional Commits, merges, resolução de conflitos, versionamento e Pull Req
 **Nome da equipe: Programa Dores**
 
 **Nome da equipe: Programa Dores**
-
 | Nome | Usuário do GitHub |
 |---|---|
 | Lucas Donini | Lucas-Donini |
+| João Lessa | Lessajp2007 |
+
 
 ## Sumário
 
