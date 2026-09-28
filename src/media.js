@@ -1,4 +1,9 @@
-import { MEDIA_APROVACAO, MEDIA_RECUPERACAO, NOTA_MAXIMA, NOTA_MINIMA } from './config.js';
+import {
+  MEDIA_APROVACAO,
+  MEDIA_RECUPERACAO,
+  NOTA_MAXIMA,
+  NOTA_MINIMA,
+} from './config.js';
 
 /**
  * Indica se o valor é uma nota válida: um número entre NOTA_MINIMA e NOTA_MAXIMA.
@@ -7,7 +12,11 @@ import { MEDIA_APROVACAO, MEDIA_RECUPERACAO, NOTA_MAXIMA, NOTA_MINIMA } from './
  * @returns {boolean}
  */
 export function ehNotaValida(nota) {
-  return typeof nota === 'number' && nota >= NOTA_MINIMA && nota <= NOTA_MAXIMA;
+  return (
+    typeof nota === 'number' &&
+    nota >= NOTA_MINIMA &&
+    nota <= NOTA_MAXIMA
+  );
 }
 
 /**
@@ -21,13 +30,15 @@ export function calcularMedia(notas) {
     throw new Error('Informe ao menos uma nota.');
   }
 
-  let soma = 0;
-  for (let i = 0; i < notas.length; i++) {
-    if (!ehNotaValida(notas[i])) {
-      throw new Error(`Nota inválida: ${notas[i]}. Use valores entre ${NOTA_MINIMA} e ${NOTA_MAXIMA}.`);
+  const soma = notas.reduce((total, nota) => {
+    if (!ehNotaValida(nota)) {
+      throw new Error(
+        `Nota inválida: ${nota}. Use valores entre ${NOTA_MINIMA} e ${NOTA_MAXIMA}.`
+      );
     }
-    soma = soma + notas[i];
-  }
+
+    return total + nota;
+  }, 0);
 
   return soma / notas.length;
 }
