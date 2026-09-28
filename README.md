@@ -21,6 +21,7 @@ Conventional Commits, merges, resolução de conflitos, versionamento e Pull Req
 | Lucas Donini | Lucas-Donini |
 
 
+
 ## Sumário
 
 - [Sobre o projeto](#sobre-o-projeto)
