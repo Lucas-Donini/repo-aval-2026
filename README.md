@@ -14,10 +14,11 @@ Conventional Commits, merges, resolução de conflitos, versionamento e Pull Req
 
 > Preenchida pela equipe na [TAREFA-01](TAREFAS.md#tarefa-01--integrantes-da-equipe).
 
-**Nome da equipe:**
+**Nome da equipe: Programa Dores**
 
 | Nome | Usuário do GitHub |
-| ---- | ----------------- |
+| Lucas Donini | Lucas-Donini |
+
 
 ## Sumário
 
