@@ -21,6 +21,7 @@ describe('calcularMedia', () => {
 });
 
 describe('obterSituacao', () => {
+
   test('retorna "Aprovado" para média acima da média de aprovação', () => {
     assert.equal(obterSituacao(8.5), 'Aprovado');
   });
@@ -33,7 +34,19 @@ describe('obterSituacao', () => {
     assert.equal(obterSituacao(5), 'Recuperação');
   });
 
+  test('retorna "Aprovado com distinção" para média igual a 9', () => {
+    assert.equal(obterSituacao(9), 'Aprovado com distinção');
+  });
+  test('retorna "Aprovado com distinção" para média igual a 10', () => {
+    assert.equal(obterSituacao(10), 'Aprovado com distinção');
+  });
+
+  test('retorna "Aprovado" para média igual a 8.9', () => {
+    assert.equal(obterSituacao(8.9), 'Aprovado');
+  });
+
   test('retorna "Reprovado" para média abaixo de 5', () => {
     assert.equal(obterSituacao(4.9), 'Reprovado');
   });
+
 });
